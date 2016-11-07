@@ -1,0 +1,32 @@
+@import url(animate.css);
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+.tabAnim{
+    width: 83.5%;
+    position: fixed;
+  -webkit-animation-name: bounceIn;
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: bounceIn;
+  -moz-animation-fill-mode: both;
+  -moz-animation-duration: 1s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-timing-function: linear;
+  animation-name: bounceIn;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+.img:hover{
+    -webkit-filter:none;
+    -webkit-transform: scale(7);
+    -webkit-transition:1s;
+    -moz-filter:none;
+    -moz-transform: scale(7);
+    -moz-transition: 1s;
+
