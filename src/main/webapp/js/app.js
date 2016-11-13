@@ -1,5 +1,5 @@
 
-	var app =angular.module('lora',['ngRoute','ngResource']);
+	var app =angular.module('LORA',['ngRoute','especeMod','compositionMod','ngResource']);
 	app.config(function($routeProvider) {
 
 	  $routeProvider

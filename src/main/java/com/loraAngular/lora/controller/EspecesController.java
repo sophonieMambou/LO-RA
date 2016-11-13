@@ -27,17 +27,16 @@ public class EspecesController {
         return loraServices.saveOrUpdateEspeces(espece);
     }
     
-//   
-//    
-//   @RequestMapping(method = RequestMethod.PUT, value = "/{id}")
-//    public Especes modifierEspeces(@PathVariable(value = "id")long id, @RequestBody Especes espece){
-//        Especes c = loraServices.findEspecesById(id);
-//        c.setNom(espece.getNom());
-//        c.setComptes(espece.getComptes());
-//        c.setProfil(espece.getProfil());
-//        return loraServices.creerOuModifierEspeces(c);
-//    }
-//    
+   
+    
+   @RequestMapping(method = RequestMethod.PUT, value = "/{id}")
+    public Especes modifierEspeces(@PathVariable(value = "id")long id, @RequestBody Especes espece) throws ServiceException{
+        Especes c = loraServices.findEspecesById(id);
+        c.setNom(espece.getNom());
+        c.setType(espece.getType());
+        return loraServices.saveOrUpdateEspeces(espece);
+    }
+    
     @RequestMapping(method = RequestMethod.GET,value = "/")
     public List<Especes> listerEspeces() throws ServiceException{
         return loraServices.findAllEspeces();

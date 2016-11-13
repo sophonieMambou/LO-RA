@@ -28,7 +28,7 @@ public class ValeursEnergetiques implements Serializable{
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
     
-    private String code;
+    private ListeValeurs code;
     
     private String nom;
     
@@ -45,11 +45,11 @@ public class ValeursEnergetiques implements Serializable{
         this.id = id;
     }
 
-    public String getCode() {
+    public ListeValeurs getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(ListeValeurs code) {
         this.code = code;
     }
 

@@ -43,6 +43,14 @@ public class Composition implements Serializable{
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "composition")
     private List<Ration> ration;
 
+    public Composition(Engredients engredients, ValeursEnergetiques valeursEnergetiques) {
+        this.engredients = engredients;
+        this.valeursEnergetiques = valeursEnergetiques;
+    }
+
+    public Composition() {
+    }
+    
     public Long getId() {
         return id;
     }

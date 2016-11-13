@@ -1,11 +1,11 @@
 com/loraAngular/lora/controller/BesoinAlimentaireController.class
 com/loraAngular/lora/data/TypeAnimaux.class
 com/loraAngular/lora/dao/impl/RationDao.class
-com/loraAngular/lora/data/BesoinAlimentaire.class
 com/loraAngular/lora/dao/impl/EngredientsDao.class
 com/loraAngular/lora/dao/IRation.class
-com/loraAngular/lora/dao/impl/BesoinAlimentaireDao.class
+com/loraAngular/lora/data/BesoinAlimentaire.class
 com/loraAngular/lora/controller/RationController.class
+com/loraAngular/lora/dao/impl/BesoinAlimentaireDao.class
 com/loraAngular/lora/data/Ration.class
 com/loraAngular/lora/data/Composition.class
 com/loraAngular/lora/Main.class
@@ -19,8 +19,9 @@ com/loraAngular/lora/controller/CompositionController.class
 com/loraAngular/lora/controller/ValeursEnergetiquesController.class
 com/loraAngular/lora/service/ILoraServices.class
 com/loraAngular/lora/dao/impl/ValeursEnergetiquesDao.class
-com/loraAngular/lora/service/impl/LoraServices.class
+com/loraAngular/lora/data/ListeValeurs.class
 com/loraAngular/lora/controller/EngredientsController.class
+com/loraAngular/lora/service/impl/LoraServices.class
 com/loraAngular/lora/controller/EspecesController.class
 com/loraAngular/lora/dao/IEspeces.class
 com/loraAngular/lora/dao/impl/EspecesDao.class

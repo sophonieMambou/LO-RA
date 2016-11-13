@@ -1,31 +1,69 @@
 <!DOCTYPE html>
-<html ng-app="banque">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LO-RA </title>
-<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-<link href="css/bootstrap-theme.css" rel="stylesheet" />
-<link href="css/styles.css" rel="stylesheet"/>
+<html ng-app="LORA">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LO-RA</title>
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+        <link href="css/bootstrap-theme.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet"/>
 
+        <script type="text/javascript" src="lib/angular.min.js" ></script>
+        <script type="text/javascript" src="lib/ui-bootstrap-tpls.min.js"></script>
+        <script type="text/javascript" src="lib/angular-route.js"></script>
+        <script type="text/javascript" src="lib/angular-resource.js"></script>
+        <script src="lib/angular-animate.js" type="text/javascript"></script>
+        <script type="text/javascript" src="lib/angular-ui-router.js"></script>
 
+        <script type="text/javascript" src="modules/especes/especesApp.js"></script>
+        <script type="text/javascript" src="modules/especes/js/services.js"></script>
+        <script type="text/javascript" src="modules/especes/js/controllers.js"></script>
 
-<script type="text/javascript" src="lib/angular.min.js" ></script>
-<script type="text/javascript" src="lib/ui-bootstrap-tpls.min.js"></script>
-<script type="text/javascript" src="lib/angular-route.js"></script>
-<script type="text/javascript" src="lib/angular-resource.js"></script>
-<script src="lib/angular-animate.js" type="text/javascript"></script>
-<script type="text/javascript" src="lib/angular-ui-router.js"></script>
+        <script type="text/javascript" src="modules/composition/compositionsApp.js"></script>
+        <script type="text/javascript" src="modules/composition/js/services.js"></script>
+        <script type="text/javascript" src="modules/composition/js/controllers.js"></script>
 
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/services/services.js"></script>
+        <script type="text/javascript" src="js/controllers/controllers.js"></script>
 
-
-<script type="text/javascript" src="js/app.js"></script>
-<script type="text/javascript" src="js/services/services.js"></script>
-<script type="text/javascript" src="js/controllers/controllers.js"></script>
-
-</head>
-<boby>
-   
-  </body>
+    </head>
+    <boby>
+        <div class="container">
+            <div ng-controller="Controller" class="panel-primary" >
+                <div id="header-wrapper">
+                    <div id="header" class="container">
+                        <div id="logo">
+                            <span class="icon "></span>
+                            <h1><a href="#">LO-RA</a></h1>
+                        </div>
+                        <div id="menu">
+                            <ul class="nav nav-tabs nav-pills">
+                                <li ng-class="{ active:isSet(1) }"><a href ng-click="onclickHomepage()" >Homepage</a></li>
+                                <li ng-class="{ active:isSet(2) }"><a href ng-click="onclickEspeces()" >Especes</a></li>
+                                <li ng-class="{ active:isSet(3) }"><a href ng-click="onclickEngredients()" >Engredients</a></li>
+                                <li ng-class="{ active:isSet(4) }"><a href ng-click="onclickComposition()" >Composition</a></li>
+                                <li ng-class="{ active:isSet(5) }"><a href ng-click="onclickAlimentation()" >Alimentation</a></li>
+                                <li ng-class="{ active:isSet(6) }"><a href ng-click="onclickContact()" >Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <ng-view ></ng-view>
+                </div>
+                <div id="copyright">
+                    <p>&copy; AGEPD. All rights reserved. | Design by INFOTEL</a>.</p>
+                    <ul class="contact">
+                        <li><a href="#" class="icon icon-twitter"><span>Twitter</span></a></li>
+                        <li><a href="#" class="icon icon-facebook"><span></span></a></li>
+                        <li><a href="#" class="icon icon-dribbble"><span>Pinterest</span></a></li>
+                        <li><a href="#" class="icon icon-tumblr"><span>Google+</span></a></li>
+                        <li><a href="#" class="icon icon-rss"><span>Pinterest</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

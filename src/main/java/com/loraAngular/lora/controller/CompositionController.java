@@ -26,11 +26,12 @@ public class CompositionController {
 
     @Resource
     private ILoraServices loraServices;
-
+    
     @RequestMapping(method = RequestMethod.POST, value = "/")
-    public Composition creerComposition(@RequestBody Composition composition) throws ServiceException {
+    public Composition creerComposition(@RequestBody Composition composition) throws ServiceException{
         return loraServices.saveOrUpdate(composition);
     }
+    
 
 //   
 //    

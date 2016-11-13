@@ -9,7 +9,7 @@ spring:
             ddl-auto: update
     datasource:
         platform: mysql
-        url: jdbc:mysql://localhost:3306/APR?ssl=false
+        url: jdbc:mysql://localhost:3306/LORA?ssl=false
         username: root
         password: root
         driverClassName: com.mysql.jdbc.Driver
