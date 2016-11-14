@@ -10,5 +10,5 @@ package com.loraAngular.lora.data;
  * @author sophonie
  */
 public enum ListeValeurs {
-    EM, CB, PB, Ca, P, NaCl, Ly, Met, Met_Cy, Cy, UF, MAD; 
+    MS, EM, CB, PB, Ca, P, NaCl, Ly, Met, Met_Cy, Cy, UF, MAD; 
 }
