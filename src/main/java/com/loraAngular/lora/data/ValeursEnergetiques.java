@@ -7,7 +7,6 @@ package com.loraAngular.lora.data;
 
 import java.io.Serializable;
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,19 +21,19 @@ import javax.persistence.OneToMany;
  */
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class ValeursEnergetiques implements Serializable{
-    
+public class ValeursEnergetiques implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
-    
+
     private ListeValeurs code;
-    
+
     private String nom;
-    
+
     private int valeur;
-    
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "valeursEnergetiques")
+
+    @OneToMany
     private List<Composition> composition;
 
     public Long getId() {
@@ -76,5 +75,5 @@ public class ValeursEnergetiques implements Serializable{
     public void setComposition(List<Composition> composition) {
         this.composition = composition;
     }
-    
+
 }

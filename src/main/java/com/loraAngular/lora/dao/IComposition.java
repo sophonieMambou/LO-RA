@@ -5,13 +5,15 @@
  */
 package com.loraAngular.lora.dao;
 
+import com.douwe.generic.dao.DataAccessException;
 import com.douwe.generic.dao.IDao;
 import com.loraAngular.lora.data.Composition;
+import java.util.List;
 
 /**
  *
  * @author sophonie
  */
 public interface IComposition extends IDao<Composition, Long>{
-    
+    public List<Composition> findByEngredient(Long id) throws DataAccessException;
 }

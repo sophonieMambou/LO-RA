@@ -13,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -33,9 +34,11 @@ public class Ration implements Serializable{
     private Date date;
 
     @ManyToOne
+    @JoinColumn(name = "besoinAlimentaire_id")
     private BesoinAlimentaire besoinAlimentaire;
     
     @ManyToOne
+    @JoinColumn(name = "composition_id")
     private Composition composition;
     
     public Long getId() {

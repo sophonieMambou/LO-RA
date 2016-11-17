@@ -5,10 +5,12 @@
  */
 package com.loraAngular.lora.data;
 
+import java.io.Serializable;
+
 /**
  *
  * @author sophonie
  */
-public enum ListeValeurs {
+public enum ListeValeurs implements Serializable{
     MS, EM, CB, PB, Ca, P, NaCl, Ly, Met, Met_Cy, Cy, UF, MAD; 
 }

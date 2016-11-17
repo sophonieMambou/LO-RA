@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.loraAngular.lora.controller;
 
 import com.loraAngular.lora.data.Engredients;
@@ -18,43 +13,42 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author sophonie
+ * @author Vincent Douwe <douwevincent@yahoo.fr>
  */
 @RestController
 @RequestMapping(path = "/engredients")
 public class EngredientsController {
-
+    
     @Resource
     private ILoraServices loraServices;
-
+    
     @RequestMapping(method = RequestMethod.POST, value = "/")
-    public Engredients creerEngredients(@RequestBody Engredients engredient) throws ServiceException {
+    public Engredients creerEngredients(@RequestBody Engredients engredient) throws ServiceException{
         return loraServices.saveOrUpdate(engredient);
     }
-
-//   
-//    
+    
+   
+    
 //   @RequestMapping(method = RequestMethod.PUT, value = "/{id}")
-//    public Engredients modifierEngredients(@PathVariable(value = "id")long id, @RequestBody Engredients engredient){
+//    public Engredients modifierEngredients(@PathVariable(value = "id")long id, @RequestBody Engredients engredient) throws ServiceException{
 //        Engredients c = loraServices.findEngredientsById(id);
 //        c.setNom(engredient.getNom());
-//        c.setComptes(engredient.getComptes());
-//        c.setProfil(engredient.getProfil());
-//        return loraServices.creerOuModifierEngredients(c);
+//        c.setType(engredient.getType());
+//        return loraServices.saveOrUpdateEngredients(engredient);
 //    }
-//    
+    
     @RequestMapping(method = RequestMethod.GET, value = "/")
-    public List<Engredients> listerEngredients() throws ServiceException {
+    public List<Engredients> listerEngredients() throws ServiceException{
         return loraServices.findAllEngredients();
     }
-
+    
     @RequestMapping(method = RequestMethod.GET, value = "/{id}")
-    public Engredients findEngredients(@PathVariable(value = "id") long id) throws ServiceException {
+    public Engredients findEngredients(@PathVariable(value = "id")long id) throws ServiceException{
         return loraServices.findEngredientsById(id);
     }
-
+    
     @RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
-    public void deleteEngredients(@PathVariable(value = "id") long id) throws ServiceException {
+    public void deleteEngredients(@PathVariable(value = "id")long id) throws ServiceException{
         loraServices.deleteEngredients(id);
     }
 }

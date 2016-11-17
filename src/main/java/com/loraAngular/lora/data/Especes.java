@@ -7,7 +7,6 @@ package com.loraAngular.lora.data;
 
 import java.io.Serializable;
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -32,7 +31,7 @@ public class Especes implements Serializable{
     
     private TypeAnimaux type;
     
-    @OneToMany(mappedBy = "especes", cascade = CascadeType.ALL)
+    @OneToMany
     private List<BesoinAlimentaire> besoinAlimentaire;
 
     public Long getId() {

@@ -5,10 +5,12 @@
  */
 package com.loraAngular.lora.data;
 
+import java.io.Serializable;
+
 /**
  *
  * @author sophonie
  */
-public enum TypeAnimaux {
+public enum TypeAnimaux implements Serializable{
     monogastrique, polygastrique;
 }

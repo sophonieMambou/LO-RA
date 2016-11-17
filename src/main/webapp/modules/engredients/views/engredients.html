@@ -1,0 +1,56 @@
+<div class="panel-body well"> 
+    <table class="table table-striped table-bordered">
+        <tr>
+            <th > </th>
+            <th ng-repeat=" item in valeurs" class="text-center">
+                {{item.code}}
+            </th>
+        </tr>
+        <tbody >
+            <tr ng-repeat="item in compositon">
+                <td class="text-center"> {{item[0].engredients.nom}}</td>
+                <td class="text-center" ng-repeat="val in item" ng-if="val.valeursEnergetiques.code == 'MS'"> 
+                    {{val.valeursEnergetiques.valeur}}
+                </td>
+                <td class="text-center" ng-repeat="val in item" ng-if="val.valeursEnergetiques.code == 'EM'"> 
+                    {{val.valeursEnergetiques.valeur}}
+                </td>
+                <td class="text-center" ng-repeat="val in item" ng-if="val.valeursEnergetiques.code == 'CB'"> 
+                    {{val.valeursEnergetiques.valeur}}
+                </td>
+                <td class="text-center" ng-repeat="val in item" ng-if="val.valeursEnergetiques.code == 'PB'"> 
+                    {{val.valeursEnergetiques.valeur}}
+                </td>
+                <td class="text-center" ng-repeat="val in item" ng-if="val.valeursEnergetiques.code == 'Ca'"> 
+                    {{val.valeursEnergetiques.valeur}}
+                </td>
+                <td class="text-center" ng-repeat="val in item" ng-if="val.valeursEnergetiques.code == 'P'"> 
+                    {{val.valeursEnergetiques.valeur}}
+                </td>
+                <td class="text-center" ng-repeat="val in item" ng-if="val.valeursEnergetiques.code == 'NaCl'"> 
+                    {{val.valeursEnergetiques.valeur}}
+                </td>
+                <td class="text-center" ng-repeat="val in item" ng-if="val.valeursEnergetiques.code == 'Ly'"> 
+                    {{val.valeursEnergetiques.valeur}}
+                </td>
+                <td class="text-center" ng-repeat="val in item" ng-if="val.valeursEnergetiques.code == 'Met_Cy'"> 
+                    {{val.valeursEnergetiques.valeur}}
+                </td>
+                <td class="text-center" ng-repeat="val in item" ng-if="val.valeursEnergetiques.code == 'Cy'"> 
+                    {{val.valeursEnergetiques.valeur}}
+                </td>
+                <td class="text-center" ng-repeat="val in item" ng-if="val.valeursEnergetiques.code == 'UF'"> 
+                    {{val.valeursEnergetiques.valeur}}
+                </td>
+                <td class="text-center" ng-repeat="val in item" ng-if="val.valeursEnergetiques.code == 'MAD'"> 
+                    {{val.valeursEnergetiques.valeur}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <button class="btn btn-primary" ng-click="findAllEngredients()">
+        <i class="glyphicon glyphicon-refresh"></i>
+        Refresh</button>
+</div>

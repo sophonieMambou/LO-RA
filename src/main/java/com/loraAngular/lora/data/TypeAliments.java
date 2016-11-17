@@ -5,10 +5,12 @@
  */
 package com.loraAngular.lora.data;
 
+import java.io.Serializable;
+
 /**
  *
  * @author sophonie
  */
-public enum TypeAliments {
+public enum TypeAliments implements Serializable{
     aliment_energetique, sels_mineraux, vitamine, proteine_animale, proteine_vegetale;
 }

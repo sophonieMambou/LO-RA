@@ -1,11 +1,11 @@
 
-	var app =angular.module('LORA',['ngRoute','especeMod','compositionMod','ngResource']);
-	app.config(function($routeProvider) {
+var app = angular.module('LORA', ['ngRoute', 'alimentationMod', 'especeMod', 'compositionMod', 'engredientsMod', 'ngResource']);
+app.config(function ($routeProvider) {
 
-	  $routeProvider
-	  .when('/help', {
-	        templateUrl: 'partials/help.html',
-	      	controller:'Controller'
-	      })
-	      .otherwise({redirectTo: '/help'});
-	});
+    $routeProvider
+            .when('/help', {
+                templateUrl: 'partials/help.html',
+                controller: 'Controller'
+            })
+            .otherwise({redirectTo: ''});
+});

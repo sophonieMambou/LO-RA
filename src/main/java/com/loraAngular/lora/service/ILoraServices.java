@@ -36,6 +36,8 @@ public interface ILoraServices {
     
     public List<Composition> findAllComposition() throws ServiceException;
     
+    public List<Composition> findByEngredient(Long id) throws ServiceException;
+    
     public Engredients saveOrUpdate(Engredients engredients) throws ServiceException;
 
     public Engredients findEngredientsById(Long id) throws ServiceException;

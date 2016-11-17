@@ -49,6 +49,11 @@ public class CompositionController {
         return loraServices.findAllComposition();
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/cmp/{id}")
+    public List<Composition> listeParEngredient(@PathVariable(value = "id") long id) throws ServiceException {
+        return loraServices.findByEngredient(id);
+    }
+    
     @RequestMapping(method = RequestMethod.GET, value = "/{id}")
     public Composition findComposition(@PathVariable(value = "id") long id) throws ServiceException {
         return loraServices.findCompositionById(id);

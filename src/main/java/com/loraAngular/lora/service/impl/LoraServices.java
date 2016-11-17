@@ -240,6 +240,15 @@ public class LoraServices implements ILoraServices {
     }
 
     @Override
+    public List<Composition> findByEngredient(Long id) throws ServiceException {
+        try {
+            return compositionDao.findByEngredient(id);
+        } catch (DataAccessException ex) {
+            return null;
+        }
+    }
+
+    @Override
     public Engredients saveOrUpdate(Engredients engredients) throws ServiceException {
         try {
             if (engredients.getId() == null) {
