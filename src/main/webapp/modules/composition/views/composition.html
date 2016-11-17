@@ -1,0 +1,42 @@
+<div class="panel-body well">
+    <form class="form-group" enctype="multipart/form-data" novalidate="novalidate" >
+        <table class="table table-striped table-bordered">
+            <tbody >
+                <tr>
+                    <td><label>Engredient:</label></td>
+                    <td><input type="text" size="25" id="inputName" ng-model="engredient.nom" required="true"/></td>
+                </tr>
+                <tr>
+                    <td><label>Type:</label></td>
+                    <td><select name="type" class="form-control" ng-model="engredient.type_aliment" required="true">
+                            <option value="0">aliment énérgètique</option>
+                            <option value="1">sels mineral</option>
+                            <option value="2">vitamine</option>
+                            <option value="3">protéine animale</option>
+                            <option value="4">protéine végétale</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Prix:</label></td>
+                    <td><input type="number" id="inputName" ng-model="engredient.prix" required="true"/></td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-striped table-bordered">
+            <tr>
+                <th ng-repeat=" item in valeurs" class="text-center">
+                    {{item.code}}
+                </th>
+            </tr>
+            <tbody >
+                <tr>
+                    <td ng-repeat=" item in valeurs"><input style="width: 70px" type="number" id="inputName" ng-model="item.valeur" required="true"/></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary btn-infos" ng-click="enregistrer(engredient, valeurs)">save</button>
+</div>
