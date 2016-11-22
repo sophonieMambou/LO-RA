@@ -1,9 +1,9 @@
 com/loraAngular/lora/controller/BesoinAlimentaireController.class
 com/loraAngular/lora/data/TypeAnimaux.class
 com/loraAngular/lora/dao/impl/RationDao.class
-com/loraAngular/lora/dao/impl/EngredientsDao.class
-com/loraAngular/lora/dao/IRation.class
 com/loraAngular/lora/data/BesoinAlimentaire.class
+com/loraAngular/lora/dao/IRation.class
+com/loraAngular/lora/dao/impl/EngredientsDao.class
 com/loraAngular/lora/controller/RationController.class
 com/loraAngular/lora/dao/impl/BesoinAlimentaireDao.class
 com/loraAngular/lora/data/Ration.class

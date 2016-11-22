@@ -246,3 +246,27 @@ ul.contact li a:before
     text-decoration: none;
     color: rgba(255,255,255,0.8);
 }
+
+.spacer{
+    margin-top:  20px;
+}
+table-hover > tbody > tr:hover > tr,
+.table-hover > tbody > tr:hover > td{
+    background-color: #269abc;
+    color: #000;
+}
+.clicktable{
+    cursor: pointer;
+}
+.positionG{
+    float: left;
+    padding-left: 200px;
+}
+.position1{
+    padding-left: 200px;
+}
+.positionD{
+    float: right;
+    padding-right: 400px;
+    padding-top: 50px;
+}
