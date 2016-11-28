@@ -19,7 +19,7 @@
         <script type="text/javascript" src="modules/engredients/engredientsApp.js"></script>
         <script type="text/javascript" src="modules/engredients/js/services.js"></script>
         <script type="text/javascript" src="modules/engredients/js/controllers.js"></script>
-        
+
         <script type="text/javascript" src="modules/especes/especesApp.js"></script>
         <script type="text/javascript" src="modules/especes/js/services.js"></script>
         <script type="text/javascript" src="modules/especes/js/controllers.js"></script>
@@ -27,51 +27,96 @@
         <script type="text/javascript" src="modules/composition/compositionsApp.js"></script>
         <script type="text/javascript" src="modules/composition/js/services.js"></script>
         <script type="text/javascript" src="modules/composition/js/controllers.js"></script>
-        
+
         <script type="text/javascript" src="modules/alimentation/alimentationsApp.js"></script>
         <script type="text/javascript" src="modules/alimentation/js/services.js"></script>
         <script type="text/javascript" src="modules/alimentation/js/controllers.js"></script>
+        
+        <script type="text/javascript" src="modules/ration/rationApp.js"></script>
+        <script type="text/javascript" src="modules/ration/js/services.js"></script>
+        <script type="text/javascript" src="modules/ration/js/controllers.js"></script>
 
         <script type="text/javascript" src="js/app.js"></script>
         <script type="text/javascript" src="js/services/services.js"></script>
         <script type="text/javascript" src="js/controllers/controllers.js"></script>
+        <script type="text/javascript">
+            function addImageHTML(n) {
+//                document.getElementById('image').innerHTML = '';
+                if (n === 1) {
+                    document.getElementById('image').innerHTML = '<table><tr><td ></td>\n\
+                        <td><img src="images/volaille2.jpeg" alt=""></td><td><img src="images/volaille3.jpeg" alt=""></td><td><img src="images/volaille4.jpeg" alt=""></td>\n\
+                        <td><img src="images/volaille5.jpeg" alt=""></td><td><img src="images/volaille6.jpeg" alt=""></td><td><img src="images/volaille7.jpg" alt=""></td>\n\
+                        <td><img src="images/volaille8.jpeg" alt=""></td></tr> </table>';
+
+                }
+                if (n === 2) {
+                    document.getElementById('image').innerHTML = '<table><tr><td ></td>\n\
+                        <td><img src="images/animal3.jpeg" alt=""></td><td><img src="images/animal10.jpeg" alt=""></td><td><img src="images/animal14.jpeg" alt=""></td>\n\
+                        <td><img src="images/animal7.jpeg" alt=""></td><td><img src="images/animal6.jpeg" alt=""></td><td><img src="images/animal12.jpeg" alt=""></td>\n\
+                        <td><img src="images/animal4.jpeg" alt=""></td></tr> </table>';
+
+                }
+                if (n === 3) {
+                    document.getElementById('image').innerHTML = '<table><tr><td ></td>\n\
+                        <td><img src="images/aliment3.jpeg" alt=""></td><td><img src="images/aliment10.jpeg" alt=""></td><td><img src="images/aliment11.jpeg" alt=""></td>\n\
+                        <td><img src="images/aliment12.jpeg" alt=""></td><td><img src="images/aliment6.jpeg" alt=""></td><td><img src="images/aliment4.jpeg" alt=""></td>\n\
+                        <td><img src="images/aliment2.jpeg" alt=""></td></tr> </table>';
+
+                }
+                if (n === 4) {
+                    document.getElementById('image').innerHTML = '<table><tr><td ></td>\n\
+                        <td><img src="images/aliment9.jpeg" alt=""></td><td><img src="images/volaille5.jpeg" alt=""></td><td><img src="images/animal11.jpeg" alt=""></td>\n\
+                        <td><img src="images/aliment8.jpg" alt=""></td><td><img src="images/aliment5.jpeg" alt=""></td><td><img src="images/volaille2.jpeg" alt=""></td>\n\
+                        <td><img src="images/animal5.jpeg" alt=""></td></tr> </table>';
+                }
+            }
+        </script>
 
     </head>
-    <boby>
-        <div class="container">
-            <div ng-controller="Controller" class="panel-primary" >
-                <div id="header-wrapper">
-                    <div id="header" class="container">
-                        <div id="logo">
-                            <span class="icon "></span>
-                            <h1><a href="#">LO-RA</a></h1>
-                        </div>
-                        <div id="menu">
-                            <ul class="nav nav-tabs nav-pills">
-                                <li ng-class="{ active:isSet(1) }"><a href ng-click="onclickHomepage()" >Homepage</a></li>
-                                <li ng-class="{ active:isSet(2) }"><a href ng-click="onclickEspeces()" >Especes</a></li>
-                                <li ng-class="{ active:isSet(3) }"><a href ng-click="onclickEngredients()" >Engredients</a></li>
-                                <li ng-class="{ active:isSet(4) }"><a href ng-click="onclickComposition()" >Composition</a></li>
-                                <li ng-class="{ active:isSet(5) }"><a href ng-click="onclickAlimentation()" >Alimentation</a></li>
-                                <li ng-class="{ active:isSet(6) }"><a href ng-click="onclickContact()" >Contact Us</a></li>
-                            </ul>
+
+    <body onload="addImageHTML(4);" class="container-fluid">
+        <header class="barner" >
+            <div class="welcome row">
+                <div id="banniere" class="col-md-3">
+                    <img src="images/logo.jpg" alt="">
+                </div>
+                <div id="image" class="col-md-9">
+                </div>
+            </div>
+        </header>
+        <div id="cont">
+            <div class="container" style="min-height: 20em;">
+
+                <div ng-controller="Controller" class="panel-primary" >
+                    <div id="header-wrapper">
+                        <div id="header" class="container">
+
+                            <div id="menu">
+                                <ul class="nav nav-tabs nav-pills">
+                                    <li ng-class="{ active:isSet(1) }"><a href ng-click="onclickHomepage()"  onclick="addImageHTML(1);">Homepage</a></li>
+                                    <li ng-class="{ active:isSet(2) }"><a href ng-click="onclickEspeces()" onclick="addImageHTML(2);" >Especes</a></li>
+                                    <li ng-class="{ active:isSet(3) }"><a href ng-click="onclickEngredients()"  onclick="addImageHTML(3);">Engredients</a></li>
+                                    <li ng-class="{ active:isSet(4) }"><a href ng-click="onclickComposition()"  onclick="addImageHTML(4);">Composition</a></li>
+                                    <li ng-class="{ active:isSet(5) }"><a href ng-click="onclickAlimentation()" onclick="addImageHTML(3);">Alimentation</a></li>
+                                    <li ng-class="{ active:isSet(6) }"><a href ng-click="onclickContact()" >Ration</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="wrapper">
-                    <ng-view ></ng-view>
-                </div>
-                <div id="copyright">
-                    <p>&copy; AGEPD. All rights reserved. | Design by INFOTEL</a>.</p>
-                    <ul class="contact">
-                        <li><a href="#" class="icon icon-twitter"><span>Twitter</span></a></li>
-                        <li><a href="#" class="icon icon-facebook"><span></span></a></li>
-                        <li><a href="#" class="icon icon-dribbble"><span>Pinterest</span></a></li>
-                        <li><a href="#" class="icon icon-tumblr"><span>Google+</span></a></li>
-                        <li><a href="#" class="icon icon-rss"><span>Pinterest</span></a></li>
-                    </ul>
+                    <div class="wrapper" >
+                        <ng-view ></ng-view>
+                    </div>
+
                 </div>
             </div>
         </div>
+        <footer id="footer">
+            <div id="bottom" style="height: 40px">
+
+                <p class="text-center">
+                    &copy; AGEPD. All rights reserved. | Design by INFOTEL
+                </p>
+            </div>
+        </footer>
     </body>
 </html>

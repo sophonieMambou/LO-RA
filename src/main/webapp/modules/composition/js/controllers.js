@@ -15,6 +15,7 @@ compositionsApp.controller('compositionsController', ['$scope', '$modal', '$loca
             {id: null, code: 'P', nom: 'phosphore', valeur: ''},
             {id: null, code: 'NaCl', nom: 'sel', valeur: ''},
             {id: null, code: 'Ly', nom: 'lysine', valeur: ''},
+            {id: null, code: 'Met', nom: 'Methionine', valeur: ''},
             {id: null, code: 'Met_Cy', nom: 'methionine cystine', valeur: ''},
             {id: null, code: 'Cy', nom: 'cystine', valeur: ''},
             {id: null, code: 'UF', nom: 'UF', valeur: ''},

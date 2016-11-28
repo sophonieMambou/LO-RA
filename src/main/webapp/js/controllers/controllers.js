@@ -31,7 +31,7 @@ app.controller('Controller', ['$scope', '$location', function ($scope, $location
         };
         $scope.onclickContact = function () {
             $scope.setTab(6)
-            $location.path('/contact/');
+            $location.path('/besoinAlimentaire/');
         };
 
 

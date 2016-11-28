@@ -31,10 +31,13 @@ public class ValeursEnergetiques implements Serializable {
 
     private String nom;
 
-    private int valeur;
+    private float valeur;
 
     @OneToMany
     private List<Composition> composition;
+
+    @OneToMany
+    private List<Ration> ration;
 
     public Long getId() {
         return id;
@@ -60,11 +63,11 @@ public class ValeursEnergetiques implements Serializable {
         this.nom = nom;
     }
 
-    public int getValeur() {
+    public float getValeur() {
         return valeur;
     }
 
-    public void setValeur(int valeur) {
+    public void setValeur(float valeur) {
         this.valeur = valeur;
     }
 
@@ -74,6 +77,14 @@ public class ValeursEnergetiques implements Serializable {
 
     public void setComposition(List<Composition> composition) {
         this.composition = composition;
+    }
+
+    public List<Ration> getRation() {
+        return ration;
+    }
+
+    public void setRation(List<Ration> ration) {
+        this.ration = ration;
     }
 
 }

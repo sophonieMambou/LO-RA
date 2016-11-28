@@ -7,7 +7,7 @@ engredientsApp.factory('EngredientsService', ['$http', '$q', '$location', functi
                 return $http.get('composition/cmp/'+id)
                         .then(
                                 function (response) {
-                                    console.log(response.data);
+                                    //console.log(response.data);
                                     return response.data;
                                 },
                                 function (errResponse) {

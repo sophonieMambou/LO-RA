@@ -3,22 +3,21 @@
         <form class="form-group" enctype="multipart/form-data" novalidate="novalidate" >
             <table class="table">
                 <tbody >
-
-                    <tr>
-                        <td class="text-center"> <label  for="inputName" >nom:  </label></td>
-                        <td>  </td>
-                        <td><input type="text" size="25" id="inputName" ng-model="espece.nom" required="true"/></td>
-                    </tr>
                     <tr>
                         <td class="text-center"> <label  for="inputName" >Espece:  </label></td>
-                        <td>  </td>
-                        <td><select name="type" class="form-control" ng-model="espece.type" required="true">
-                                <option ng-repeat="espece in especes">{{espece.nom}}</option>
+                        <td><select style="width: 200px;" name="type" class="form-control" ng-model="espece_id" required="true" ng-change="besoinAlimentaire()">
+                                <option ng-repeat="espece in especes" ng-value="espece.id" >{{espece.nom}}</option>
                             </select>
                         </td>
                     </tr>
-                    <tr></tr>
-
+                     <tr></tr>
+                    <tr>
+                        <td class="text-center"> <label  for="inputName" >Ration:  </label></td>
+                       <td><select name="type" class="form-control" ng-model="besoin_id" required="true" ng-change="ration()">
+                                <option ng-repeat="b in listeBesoin" ng-value="b.id">{{b.nom}}</option>
+                            </select>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </form>
@@ -42,22 +41,28 @@
             <tr>
                 <th>engredients</th>
                 <th>(%)</th>
-                <th ng-repeat=" item in valeurs" class="text-center">
+                <th ng-repeat=" item in valeurs" class="text-center" >
                     {{item.code}}
                 </th>
             </tr>
             <tbody >
                 <tr ng-repeat=" item in selection" class="text-center">
                     <td>{{item.nom}} </td>
-                    <td><input style="max-width: 45px" type="number" id="inputName" ng-model="percent" required="true" /></td>
-                    <td ng-repeat=" item in valeurs"><input style="max-width: 45px" type="number" id="inputName" ng-model="val" /></td>
+                    <td><input style="max-width: 45px" type="number" ng-model="percent[selection.indexOf(item)]" ng-change="Total()" step="0.01"/></td>
+                    <!-- <td ng-repeat=" items in valeurs"  ><input style="max-width: 45px" type="number" id="inputName" ng-model="this.val" ng-change="Bilan(valeurs.indexOf(items), selection.indexOf(item))"/></td> -->
+                    <td style="max-width: 100px;"  ng-repeat=" items in bilan[selection.indexOf(item)] track by $index" > {{items.val | number:2}} </td>
                 </tr>
                 <tr class="text-center">
                     <td>Total </td>
-                    <td >{{percent}}</td>
+                    <td>{{total}}</td>
+                    <td ng-repeat=" item in valeurs"> {{item.val | number:2}}</td>
+                </tr>
+                <tr class="text-center">
+                    <td> </td>
+                    <td></td>
+                    <td ng-repeat=" item in valeurs"> {{item.ratio | number:2}}</td>
                 </tr>
             </tbody>
         </table>
     </div>
-</div>
 </div>

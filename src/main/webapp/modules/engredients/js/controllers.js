@@ -21,6 +21,7 @@ engredientsApp.controller('engredientsController', ['$scope', '$modal', '$locati
             {code: 'P'},
             {code: 'NaCl'},
             {code: 'Ly'},
+            {code: 'Met'},
             {code: 'Met_Cy'},
             {code: 'Cy'},
             {code: 'UF'},

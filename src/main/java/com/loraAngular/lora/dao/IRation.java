@@ -5,13 +5,15 @@
  */
 package com.loraAngular.lora.dao;
 
+import com.douwe.generic.dao.DataAccessException;
 import com.douwe.generic.dao.IDao;
 import com.loraAngular.lora.data.Ration;
+import java.util.List;
 
 /**
  *
  * @author sophonie
  */
 public interface IRation extends IDao<Ration, Long>{
-    
+    public List<Ration> findByBesoin(Long id) throws DataAccessException;
 }

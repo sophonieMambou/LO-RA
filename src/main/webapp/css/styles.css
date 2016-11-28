@@ -4,15 +4,18 @@
 }
 body
 {
-    margin: 5%;
+    /*    margin: 5%;*/
     padding: 0px;
     font-family: 'Questrial', sans-serif;
     font-size: 12pt;
-    color: rgba(0,0,0,.6);
+    /*color: rgba(0,0,0,.6);*/
+    background: url("../images/bglora1.png") repeat-x fixed center bottom rgb(17, 140, 217);
+    position: relative;
+    background-repeat: no-repeat;
 }
 
 .container{
-    background: #32ac20; 
+    /*background: #32ac20;*/ 
 }
 
 ol, ul
@@ -35,12 +38,18 @@ a:hover
 {
     text-decoration: none;
 }
-
+#cont{
+    background: url("../images/fond5.png") fixed center top;
+    position: relative;
+    background-repeat: no-repeat;
+     background-attachment: scroll;
+}
 
 .container
 {
     margin: 0px auto;
-    width: 1200px;
+    width: 1230px;
+
 }
 
 
@@ -72,18 +81,18 @@ ul.contact li span
 
 ul.contact li a
 {
-    color: #FFF;
+    /*color: #FFF;*/
 }
 
 ul.contact li a:before
 {
     display: inline-block;
-    background: #32ac20;
+    /*background: #32ac20;*/
     width: 40px;
     height: 40px;
     line-height: 40px;
     text-align: center;
-    color: rgba(255,255,255,1);
+    /*color: rgba(255,255,255,1);*/
 }
 
 
@@ -107,14 +116,14 @@ ul.contact li a:before
 .button:before
 {
     display: inline-block;
-    background: #8DCB89;
+    /*background: #8DCB89;*/
     margin-right: 1em;
     width: 40px;
     height: 40px;
     line-height: 40px;
     border-radius: 20px;
     text-align: center;
-    color: #272925;
+    /*color: #272925;*/
 }
 
 .button-small
@@ -128,7 +137,7 @@ ul.contact li a:before
 #header-wrapper
 {
     overflow: hidden;
-    background: #32ac20;
+    /*background: #32ac20;*/
 }
 
 #header
@@ -150,17 +159,43 @@ ul.contact li a:before
 #logo a
 {
     text-decoration: none;
-    color: #FFF;
+    /*color: #FFF;*/
+
 }
 
 
 
 #logo span a
 {
-    color: rgba(255,255,255,0.8);
+    /*color: rgba(255,255,255,0.8);*/
+    background: url("../images/testbaniere.png") repeat-x fixed center bottom rgb(17, 140, 217);
+    position: relative;
+    background-repeat: no-repeat;
 }
 
+header.barner {
+    /*height: 50%;*/
+   background-color: white;
+    /* background-image: url("../images/banier1.png");
+    background-repeat: no-repeat;*/
+}
 
+td img{
+    border:3px solid orange;
+    border-radius:100%;
+    padding:5px;
+    margin: 8px;
+}
+
+#banniere{
+    display: inline-block;
+    vertical-align: top;
+}       
+
+#image{
+    display: inline-block;
+    vertical-align: top;
+}       
 
 /*********************************************************************************/
 /* Menu                                                                          */
@@ -217,7 +252,7 @@ ul.contact li a:before
 .wrapper
 {
     overflow: hidden;
-    padding: 0em 0em 5em 0em;
+    padding: 0em 0em 2em 0em;
     background: #FFF;
 }
 
@@ -230,7 +265,7 @@ ul.contact li a:before
 {
     overflow: hidden;
     padding: 5em 0em;
-    border-top: 20px solid rgba(255,255,255,0.08);
+    /*border-top: 20px solid rgba(255,255,255,0.08);*/
     text-align: center;
 }
 
@@ -238,11 +273,40 @@ ul.contact li a:before
 {
     letter-spacing: 1px;
     font-size: 0.90em;
-    color: rgba(255,255,255,0.6);
+    /*color: rgba(255,255,255,0.6);*/
 }
 
 #copyright a
 {
     text-decoration: none;
-    color: rgba(255,255,255,0.8);
+    /*color: rgba(255,255,255,0.8);*/
 }
+#bottom {
+    max-width: 1200px;
+    text-align: center;
+    font-size: smaller;
+    font-style: italic;
+    padding-top: 5px;
+    background: linear-gradient(tomato, #7292A7 0%, #486375 100%) repeat scroll 0% 0% transparent;
+    background-color: transparent;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+    padding-bottom: 10px;
+    margin: auto;
+    height:7px;
+    border-radius: 0px 0px 0px 0px;
+}
+
+td img{
+    width: 8em;
+}
+
+#banniere img{
+    height: 13em;
+    width: 300px;
+}
+

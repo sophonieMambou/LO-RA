@@ -1,6 +1,4 @@
 'use strict';
-
-//var appAccCon=angular.module('appAccCon',[]);
 especesApp.controller('especesController', ['$scope', '$modal', '$location', 'Espece', '$log', function ($scope, $modal, $location, Espece, $log) {
 
         var self = $scope;

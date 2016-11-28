@@ -174,6 +174,15 @@ public class LoraServices implements ILoraServices {
     }
 
     @Override
+    public List<BesoinAlimentaire> findByEspece(Long id) throws ServiceException {
+        try {
+            return besoinAlimentaireDao.findByEspece(id);
+        } catch (DataAccessException ex) {
+            return null;
+        }
+    }
+
+    @Override
     public void deleteBesoinAlimentaire(Long id) throws ServiceException {
         try {
             BesoinAlimentaire besoinAlimentaire = besoinAlimentaireDao.findById(id);
@@ -335,6 +344,15 @@ public class LoraServices implements ILoraServices {
         } catch (DataAccessException ex) {
             Logger.getLogger(LoraServices.class.getName()).log(Level.SEVERE, null, ex);
             throw new ServiceException("non trouvé");
+        }
+    }
+
+    @Override
+    public List<Ration> findByBesoin(Long id) throws ServiceException {
+        try {
+            return rationDao.findByBesoin(id);
+        } catch (DataAccessException ex) {
+            return null;
         }
     }
 

@@ -1,5 +1,5 @@
 
-var app = angular.module('LORA', ['ngRoute', 'alimentationMod', 'especeMod', 'compositionMod', 'engredientsMod', 'ngResource']);
+var app = angular.module('LORA', ['ngRoute', 'alimentationMod', 'especeMod', 'rationMod', 'compositionMod', 'engredientsMod', 'ngResource']);
 app.config(function ($routeProvider) {
 
     $routeProvider

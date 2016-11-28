@@ -5,7 +5,9 @@
  */
 package com.loraAngular.lora.controller;
 
+import com.loraAngular.lora.data.BesoinAlimentaire;
 import com.loraAngular.lora.data.Ration;
+import com.loraAngular.lora.data.ValeursEnergetiques;
 import com.loraAngular.lora.service.ILoraServices;
 import com.loraAngular.lora.service.ServiceException;
 import java.util.List;
@@ -27,8 +29,12 @@ public class RationController {
     @Resource
     private ILoraServices loraServices;
 
-    @RequestMapping(method = RequestMethod.POST, value = "/")
-    public Ration creerRation(@RequestBody Ration ration) throws ServiceException {
+    @RequestMapping(method = RequestMethod.POST, value = "/{id}/{id2}")
+    public Ration creerRation(@RequestBody Ration ration, @PathVariable(value = "id") long id, @PathVariable(value = "id2") long id2) throws ServiceException {
+        BesoinAlimentaire b = loraServices.findBesoinAlimentaireById(id);
+        ValeursEnergetiques v = loraServices.findValeursEnergetiquesById(id2);
+        ration.setBesoinAlimentaire(b);
+        ration.setValeursEnergetiques(v);
         return loraServices.saveOrUpdate(ration);
     }
 
@@ -46,6 +52,11 @@ public class RationController {
     @RequestMapping(method = RequestMethod.GET, value = "/")
     public List<Ration> listerRation() throws ServiceException {
         return loraServices.findAllRation();
+    }
+    
+    @RequestMapping(method = RequestMethod.GET, value = "/Ra/{id}")
+    public List<Ration> listeParBesoin(@PathVariable(value = "id") long id) throws ServiceException {
+        return loraServices.findByBesoin(id);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/{id}")

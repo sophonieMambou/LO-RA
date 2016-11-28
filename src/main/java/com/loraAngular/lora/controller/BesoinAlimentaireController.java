@@ -6,6 +6,7 @@
 package com.loraAngular.lora.controller;
 
 import com.loraAngular.lora.data.BesoinAlimentaire;
+import com.loraAngular.lora.data.Especes;
 import com.loraAngular.lora.service.ILoraServices;
 import com.loraAngular.lora.service.ServiceException;
 import java.util.List;
@@ -21,14 +22,16 @@ import org.springframework.web.bind.annotation.RestController;
  * @author sophonie
  */
 @RestController
-@RequestMapping(path = "/besoinAlimentaires")
+@RequestMapping(path = "/besoinAlimentaire")
 public class BesoinAlimentaireController {
 
     @Resource
     private ILoraServices loraServices;
     
-    @RequestMapping(method = RequestMethod.POST, value = "/")
-    public BesoinAlimentaire creerBesoinAlimentaire(@RequestBody BesoinAlimentaire besoinAlimentaire) throws ServiceException {
+    @RequestMapping(method = RequestMethod.POST, value = "/{id}")
+    public BesoinAlimentaire creerBesoinAlimentaire(@RequestBody BesoinAlimentaire besoinAlimentaire, @PathVariable(value = "id") long id) throws ServiceException {
+        Especes espece = loraServices.findEspecesById(id);
+        besoinAlimentaire.setEspeces(espece);
         return loraServices.saveOrUpdate(besoinAlimentaire);
     }
 
@@ -46,6 +49,11 @@ public class BesoinAlimentaireController {
     @RequestMapping(method = RequestMethod.GET, value = "/")
     public List<BesoinAlimentaire> listerBesoinAlimentaire() throws ServiceException {
         return loraServices.findAllBesoinAlimentaire();
+    }
+    
+    @RequestMapping(method = RequestMethod.GET, value = "/BA/{id}")
+    public List<BesoinAlimentaire> listeParEspece(@PathVariable(value = "id") long id) throws ServiceException {
+        return loraServices.findByEspece(id);
     }
     
     @RequestMapping(method = RequestMethod.GET, value = "/{id}")

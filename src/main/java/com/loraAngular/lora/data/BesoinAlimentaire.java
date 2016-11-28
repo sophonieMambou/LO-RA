@@ -15,6 +15,8 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 /**
@@ -22,6 +24,9 @@ import javax.persistence.OneToMany;
  * @author sophonie
  */
 @Entity
+@NamedQueries({
+    @NamedQuery(name = "BesoinAlimentaire.findByEspece", query = "SELECT a FROM BesoinAlimentaire a WHERE a.especes.id = :param")
+})
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class BesoinAlimentaire implements Serializable {
 

@@ -6,7 +6,6 @@
 package com.loraAngular.lora.data;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +16,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 
 /**
  *
@@ -28,26 +26,23 @@ import javax.persistence.OneToMany;
     @NamedQuery(name = "Composition.findByEngredient", query = "SELECT a FROM Composition a WHERE a.engredients.id = :param")
 })
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class Composition implements Serializable{
-    
+public class Composition implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
-    
-    private int valMin;
-    
-    private int valMax;
-    
+
+    private float valMin;
+
+    private float valMax;
+
     @ManyToOne
     @JoinColumn(name = "engredients_id")
     private Engredients engredients;
-    
+
     @ManyToOne
     @JoinColumn(name = "valeursEnergetiques_id")
     private ValeursEnergetiques valeursEnergetiques;
-    
-    @OneToMany
-    private List<Ration> ration;
 
     public Composition(Engredients engredients, ValeursEnergetiques valeursEnergetiques) {
         this.engredients = engredients;
@@ -56,7 +51,7 @@ public class Composition implements Serializable{
 
     public Composition() {
     }
-    
+
     public Long getId() {
         return id;
     }
@@ -65,19 +60,19 @@ public class Composition implements Serializable{
         this.id = id;
     }
 
-    public int getValMin() {
+    public float getValMin() {
         return valMin;
     }
 
-    public void setValMin(int valMin) {
+    public void setValMin(float valMin) {
         this.valMin = valMin;
     }
 
-    public int getValMax() {
+    public float getValMax() {
         return valMax;
     }
 
-    public void setValMax(int valMax) {
+    public void setValMax(float valMax) {
         this.valMax = valMax;
     }
 
@@ -96,13 +91,4 @@ public class Composition implements Serializable{
     public void setValeursEnergetiques(ValeursEnergetiques valeursEnergetiques) {
         this.valeursEnergetiques = valeursEnergetiques;
     }
-
-    public List<Ration> getRation() {
-        return ration;
-    }
-
-    public void setRation(List<Ration> ration) {
-        this.ration = ration;
-    }
-    
 }

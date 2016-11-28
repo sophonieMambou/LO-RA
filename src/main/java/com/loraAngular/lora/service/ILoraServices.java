@@ -24,6 +24,8 @@ public interface ILoraServices {
 
     public BesoinAlimentaire findBesoinAlimentaireById(Long id) throws ServiceException;
 
+    public List<BesoinAlimentaire> findByEspece(Long id) throws ServiceException;
+    
     public void deleteBesoinAlimentaire(Long id) throws ServiceException;
     
     public List<BesoinAlimentaire> findAllBesoinAlimentaire() throws ServiceException;
@@ -61,6 +63,8 @@ public interface ILoraServices {
     public void deleteRation(Long id) throws ServiceException;
     
     public List<Ration> findAllRation() throws ServiceException;
+    
+    public List<Ration> findByBesoin(Long id) throws ServiceException;
     
     public ValeursEnergetiques saveOrUpdate(ValeursEnergetiques valeursEnergetiques) throws ServiceException;
 
