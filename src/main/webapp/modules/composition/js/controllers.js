@@ -36,7 +36,7 @@ compositionsApp.controller('compositionsController', ['$scope', '$modal', '$loca
                                         self.composition.valeursEnergetiques = donnee;
                                         CompositionService.createComposition(self.composition).then(
                                                 function (donnee) {
-                                                   // console.log(donnee);
+                                                    // console.log(donnee);
                                                 }
                                         );
                                     }
@@ -44,6 +44,8 @@ compositionsApp.controller('compositionsController', ['$scope', '$modal', '$loca
                         }
                     }
             );
+            alert("enregistrement de " + self.engredient.nom + " réussi");
+            $location.path("/composition/");
         };
 
     }]);

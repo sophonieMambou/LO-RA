@@ -47,6 +47,8 @@ rationsApp.controller('rationsController', ['$scope', '$modal', '$location', 'Ra
                         }
                     }
             );
+            alert("enregistrement de " + self.besoin.nom + " réussi");
+            $location.path("/besoinAlimentaire/");
         };
         self.findAllEspeces();
     }]);

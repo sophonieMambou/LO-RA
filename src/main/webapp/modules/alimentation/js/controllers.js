@@ -101,7 +101,8 @@ alimentationsApp.controller('alimentationsController', ['$scope', '$modal', '$lo
                 $scope.valeurs[k].val = cal[k];
                 for (var j = 0; j < $scope.listeRation.length; j++)
                     if ($scope.valeurs[k].code == $scope.listeRation[j].valeursEnergetiques.code) {
-                        if ($scope.listeRation[j].valeursEnergetiques.valeur && cal[k] != 0)
+                        if ($scope.listeRation[j].valeursEnergetiques.valeur && cal[k] != 0 && 
+                                $scope.listeRation[j].valeursEnergetiques.valeur != 0)
                             $scope.valeurs[k].ratio = cal[k] / $scope.listeRation[j].valeursEnergetiques.valeur;
                         else
                             $scope.valeurs[k].ratio = 0;
@@ -111,13 +112,16 @@ alimentationsApp.controller('alimentationsController', ['$scope', '$modal', '$lo
             $scope.valeurs[12].ratio = cal[12]*50;
         };
 
-//        self.calculer = function () {
-//            self.bilan = [];
-//            self.composition = [];
+//        $scope.calculer = function () {
+//            $scope.bilan = [];
+//            $scope.composition = [];
+//            $log.log("La longueur "+self.selection.length);
 //            for (var i = 0; i < self.selection.length; i++) {
-//                self.composition.push(AlimentationService.findByEngredient(self.selection[i].id));
+//                AlimentationService.findByEngredient(self.selection[i].id).success(function(data){
+//                    $scope.composition.push(data);
+//                });
 //            }
-//            console.log(self.composition.$$state);
+//            //console.log($scope.composition);
 //        };
 
         self.calculer = function () {

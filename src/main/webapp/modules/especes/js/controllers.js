@@ -33,11 +33,11 @@ especesApp.controller('especesController', ['$scope', '$modal', '$location', 'Es
                 backdrop: 'static'
             });
             modalInstance.result.then(function (selectedItem) {
-                $log.info('Save changes at: ' + new Date());
-
+              //  $log.info('Save changes at: ' + new Date());
                 self.createEspece(selectedItem);
+                alert("enregistrement de "+selectedItem.nom+" réussi");
             }, function () {
-                $log.info('Closed at: ' + new Date());
+              // $log.info('Closed at: ' + new Date());
             })
         };
 
@@ -49,7 +49,7 @@ especesApp.controller('especesController', ['$scope', '$modal', '$location', 'Es
                     .then(
                             self.findAllEspeces,
                             function (errResponse) {
-                                console.error('Error while creating Espece.');
+                                //console.error('Error while creating Espece.');
                             }
                     );
         };
